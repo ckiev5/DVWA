@@ -7,10 +7,13 @@ Su dung tinh nang **Intruder**, thu bruteforces voi tai khoan **admin**:
 ![Brute Forces_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Brute%20Forces_2.png)  
 Ket qua:  
 ![Brute Forces_3](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Brute%20Forces_3.png)  
-Tai khoan: **admin**
+Tai khoan: **admin**  
 Mat khau: **password**  
 ## 2. Command Injection  
-
+Nhap **8.8.8.8** vao input box:  
+![Command Injection_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Command%20Injection_1.png)  
+Chuc nang **Ping a device** thuc hien cau lenh **ping -c 4**, thu su dung ky tu **';'** de ket hop voi cac cau lenh khac:  
+![Command Injection_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Command%20Injection_2.png)  
 ## 3. CSRF  
 
 ## 4. File Inclusion  
