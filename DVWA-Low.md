@@ -1,18 +1,25 @@
 # DVWA - Security Level: Low
 
-## 1. Brute Force
+## 1. Brute Force  
+Su dung BurpSuite bat request khi thuc hien dang nhap:  
+![Brute Forces_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Brute%20Forces_1.png)  
+Su dung tinh nang **Intruder**, thu bruteforces voi tai khoan **admin**:  
+![Brute Forces_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Brute%20Forces_2.png)  
+Ket qua:  
+![Brute Forces_3](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Brute%20Forces_3.png)  
+Tai khoan: **admin**
+Mat khau: **password**  
+## 2. Command Injection  
 
-## 2. Command Injection
+## 3. CSRF  
 
-## 3. CSRF
+## 4. File Inclusion  
 
-## 4. File Inclusion
+## 5. File Upload  
 
-## 5. File Upload
+## 6. Insecure Captcha  
 
-## 6. Insecure Captcha
-
-## 7. SQL Injection
+## 7. SQL Injection  
 Nhap thu **"1"** vao input box:  
 ![SQL Injection_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/SQL%20Injection_1.png)  
 Khi nhap **User ID = 1** trang web se tra ve thong tin cua **ID, First name, Surname**, vi vay cau lenh query co the la:  
@@ -34,16 +41,16 @@ gordonb - abc123
 1337 - charley  
 pablo - letmein  
 smithy - password**  
-## 8. SQL Injection (Blind)
+## 8. SQL Injection (Blind)  
 
-## 9. Weak Session IDs
+## 9. Weak Session IDs  
 
-## 10. XSS (DOM)
+## 10. XSS (DOM)  
     
-## 11. XSS (Reflected)
+## 11. XSS (Reflected)  
     
-## 12. XSS (Stored)
+## 12. XSS (Stored)  
 
-## 13. CSP Bypass
+## 13. CSP Bypass  
 
-## 14. JavaScript
+## 14. JavaScript  
