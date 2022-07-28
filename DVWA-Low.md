@@ -72,7 +72,13 @@ Truy cap toi URL cua file shell.php:
 ![File Upload_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/File%20Upload_2.png)  
 Chuc nang File Upload khong thuc hien kiem tra file duoc upload len web co phai la file img khong, dan toi viec co the upload cac file khong hop le.  
 ## 6. Insecure Captcha  
-
+Chuc nang **Change your password** su dung reCAPTCHA chia lam 2 **step** tuong ung voi 2 POST request:  
+**step 1**  su dung **g-recaptcha-response** 
+![Insecure CAPTCHA_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Insecure%20CAPTCHA_1.png)  
+Nhung sau khi xac nhan **step 1**, **step 2** khong su dung tiep **g-recaptcha-response**:  
+![Insecure CAPTCHA_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Insecure%20CAPTCHA_2.png)  
+Vi vay, co the gui lai POST request **step 2** ma khong can co thong tin **g-recaptcha-response** de thay doi mat khau cua tai khoan:  
+![Insecure CAPTCHA_3](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Insecure%20CAPTCHA_3.png)  
 ## 7. SQL Injection  
 Nhap thu **"1"** vao input box:  
 ![SQL Injection_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/SQL%20Injection_1.png)  
