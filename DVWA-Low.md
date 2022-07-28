@@ -102,15 +102,66 @@ gordonb - abc123
 pablo - letmein  
 smithy - password**  
 ## 8. SQL Injection (Blind)  
-
+Chuc nang **User ID** kiem tra xem co user id ma nguoi dung nhap vao trong database khong:  
+![SQL Injection (Blind)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/SQL%20Injection%20(Blind)_1.png)  
+Kiem tra SQL Injection bang lenh query:  
+**' AND SLEEP(1)-- -**  
+Su dung chuc nang **Intruder** cua **BurpSuite** de kiem tra voi cac gia tri sleep khac nhau:  
+![SQL Injection (Blind)\_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/SQL%20Injection%20(Blind)_2.png)  
 ## 9. Weak Session IDs  
-
+Khi chon **Generate**, trang web tao ra mot gia tri **dvwaSession** co gia tri **1**:  
+![Weak Session IDs_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Weak%20Session%20IDs_1.png)  
+Tiep tu chon **Generate**, gia tri **dvwaSession** thay doi thanh **2**:  
+![Weak Session IDs_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/Weak%20Session%20IDs_2.png)  
+Gia tri cua **dvwaSession** tang dan moi lan chon **Generate**, vi vay co the de dang doan hoac thu duoc gia tri **dvwaSession**.  
 ## 10. XSS (DOM)  
-    
+Trang web co chuc nang chon mot trong cac ngon ngu khac nhau, chuc nang nay chua duoc kiem tra tinh hop le khi nhap input khi thu chen doan script:  
+```
+<script> alert(1) </script>
+```  
+![XSS (DOM)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/XSS%20(DOM)_1.png) 
 ## 11. XSS (Reflected)  
-    
+Khai thac loi XSS (Reflected) bang doan script:
+```
+<script> alert(1) </script>
+```  
+![XSS (Reflected)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/XSS%20(Reflected)_1.png)  
 ## 12. XSS (Stored)  
-
+Khai thac loi XSS (Stored) bang cach **Sign Guestbook** voi noi dung:  
+```
+<script> alert(1) </script>
+```  
+![XSS (Stored)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/XSS%20(Stored)_1.png)  
 ## 13. CSP Bypass  
-
+Co the chay script tu cac nguon sau:  
+```
+Content-Security-Policy
+	script-src 'self' https://pastebin.com hastebin.com www.toptal.com example.com code.jquery.com https://ssl.google-analytics.com ;
+```  
+Su dung hastebin tao mot doan script **alert(1);**:  
+![CSP Bypass_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/CSP%20Bypass_1.png)  
+Nhap duong dan vao o input va chon **Include**:  
+![CSP Bypass_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/CSP%20Bypass_2.png)  
 ## 14. JavaScript  
+Khi nhap **'success'** va chon **Summit**, nhan duoc thong bao **Invalid Token**:  
+![JavaScript_1](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/JavaScript_1.png)
+Inspect trang web, co doan script tao token nhu sau:    
+```
+function rot13(inp) {
+		return inp.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
+	}
+function generate_token() {
+		var phrase = document.getElementById("phrase").value;
+		document.getElementById("token").value = md5(rot13(phrase));
+	}
+```  
+De tao ra token, page da su dung ham rot13 sau do ma hoa bang MD5.  
+Tao token voi tu khoa **'success'** tren Kali Linux:  
+**echo -n ‘success’ | tr ‘A-Za-z’ ‘N-ZA-Mn-za-m’ | md5sum**  
+![JavaScript_2](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/JavaScript_2.png)  
+Su dung BurpSuite de bat goi tin khi nhap tu khoa **'success'**:  
+![JavaScript_3](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/JavaScript_3.png)   
+Thay gia tri token vua tao bang tu khoa **'success'**:38581812b435834ebf84ebcc2c6424d6  
+![JavaScript_4](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/JavaScript_4.png)  
+Ket qua:  
+![JavaScript_5](https://github.com/ckiev5/DVWA/blob/main/Images/Low%20Level/JavaScript_5.png) 
