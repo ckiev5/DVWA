@@ -125,7 +125,7 @@ Gia tri **dvwaSession** tuong ung voi gia tri **time stamp** khi duoc tao:
 **Result:**  
 Tag **<script** bi loai bo, su dung tag **img** kem theo dong cac tag **option, select**:   
   
-![XSS (DOM)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/XXS%20(DOM)_1.png)  
+![XSS (DOM)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/XSS%20(DOM)_1.png)  
   
 ## 11. XSS (Reflected)
 **Payload**  
@@ -134,7 +134,7 @@ Tag **<script** bi loai bo, su dung tag **img** kem theo dong cac tag **option, 
 ```
 **Result:**  
   
-![XSS (Reflected)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/XXS%20(Reflected)_1.png)  
+![XSS (Reflected)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/XSS%20(Reflected)_1.png)  
   
 ## 12. XSS (Stored)
 **Payload**  
@@ -144,10 +144,10 @@ Tag **<script** bi loai bo, su dung tag **img** kem theo dong cac tag **option, 
 **Result:**  
 Thay doi thong so **maxlength** cua o input **name**:  
   
-![XSS (Stored)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/XXS%20(Stored)_1.png)  
+![XSS (Stored)\_1](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/XSS%20(Stored)_1.png)  
   
 Chen **payload** vao o input **name**:  
-![XSS (Stored)\_2](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/XXS%20(Stored)_2.png)  
+![XSS (Stored)\_2](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/XSS%20(Stored)_2.png)  
   
 ## 13. CSP Bypass
 **Payload**  
