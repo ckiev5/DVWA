@@ -191,4 +191,3 @@ token=XXsseccusXX&phrase=success&send=Submit
   
 ![JavaScript_1](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/JavaScript_1.png) 
   
-  
