@@ -1,12 +1,16 @@
 # DVWA - Security Level: High  
 
 ## 1. Brute Force
-**Payload**  
-```
-
-```
-**Result:**  
-
+O muc do High khi dang nhap, he thong yeu cau them tham so **user_token**:  
+  
+![Brute Force_1](https://github.com/ckiev5/DVWA/blob/main/Images/High%20Level/Brute%20Force_1.png)  
+  
+**user_token** duoc tao ngau nhien, va hien thi an tren trang web:  
+  
+![Brute Force_2](https://github.com/ckiev5/DVWA/blob/main/Images/High%20Level/Brute%20Force_2.png)  
+  
+Khai thac bang cach viet mot chuong trinh de lay tham so **user_token** moi lan thu mat khau:  
+[Brute Force.py](Python/Brute%20Force/main.py)  
   
 ## 2. Command Injection
 **Payload**  
