@@ -13,13 +13,16 @@ Khai thac bang cach viet mot chuong trinh de lay tham so **user_token** moi lan 
 [Brute Force.py](Python/Brute%20Force/main.py)  
   
 ## 2. Command Injection
-**Payload**  
-```
-
-```
-**Result:**  
-
-      
+Co the khai thac bang cach su dung dau "||", "|" hoac "aaa%0awhoami" (Linux)  
+  
+![Command Injection_1](https://github.com/ckiev5/DVWA/blob/main/Images/High%20Level/Command%20Injection_1.png)  
+  
+  
+![Command Injection_2](https://github.com/ckiev5/DVWA/blob/main/Images/High%20Level/Command%20Injection_2.png)  
+  
+  
+![Command Injection_3](https://github.com/ckiev5/DVWA/blob/main/Images/High%20Level/Command%20Injection_3.png)  
+  
 ## 3. CSRF
 **Payload**  
 ```
